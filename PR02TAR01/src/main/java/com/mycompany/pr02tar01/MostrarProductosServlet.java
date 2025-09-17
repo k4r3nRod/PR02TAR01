@@ -1,7 +1,6 @@
 package com.mycompany.pr02tar01;
 
-import com.mycompany.pr02tar01.Producto;
-import com.mycompany.pr02tar01.ConexionBD;
+// ...existing code...
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +22,7 @@ public class MostrarProductosServlet extends HttpServlet {
         response.setContentType("application/json;charset=UTF-8");
         List<Producto> productos = new ArrayList<>();
         try (Connection conn = ConexionBD.getConnection();
-             PreparedStatement ps = conn.prepareStatement("SELECT * FROM productos");
+             PreparedStatement ps = conn.prepareStatement("SELECT id, nombre, descripcion, precio FROM productos");
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Producto p = new Producto();
@@ -37,8 +36,16 @@ public class MostrarProductosServlet extends HttpServlet {
             e.printStackTrace();
         }
         String json = new Gson().toJson(productos);
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = null;
+        try {
+            out = response.getWriter();
             out.print(json);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } finally {
+            if (out != null) {
+                out.close();
+            }
         }
     }
 }

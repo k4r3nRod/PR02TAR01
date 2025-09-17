@@ -63,19 +63,26 @@
      ```sh
      mvn clean install
      ```
+   - Esto compilará el proyecto y generará el archivo WAR necesario para desplegar la aplicación.
 
-4. **Despliega el archivo WAR:**
+4. **Compilación manual (opcional):**
+   - O bien, puedes compilar manualmente los archivos Java con el siguiente comando (ajusta la ruta de Tomcat y el conector MySQL si es necesario):
+     ```sh
+     javac -cp "C:\src\apache-tomcat-9.0.108\lib\servlet-api.jar;C:\src\mysql-connector-j-9.4.0\mysql-connector-j-9.4.0.jar" -d target\classes src\main\java\com\mycompany\pr02tar01\*.java src\main\java\com\mycompany\pr02tar01\*.java
+     ```
+
+5. **Despliega el archivo WAR:**
    - El archivo WAR generado estará en `target/PR02TAR01-1.0-SNAPSHOT.war`.
    - Despliega este archivo en tu servidor de aplicaciones (por ejemplo, Apache Tomcat o Payara).
 
-5. **Accede a la aplicación:**
+6. **Accede a la aplicación:**
    - Abre tu navegador y entra a:
      ```
      http://localhost:8080/PR02TAR01-1.0-SNAPSHOT/
      ```
    - (La ruta puede variar según el servidor y configuración)
 
-6. **¡Listo!**
+7. **¡Listo!**
    - Ya puedes usar el CRUD de productos desde la interfaz web.
 
 ---

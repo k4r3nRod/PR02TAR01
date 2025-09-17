@@ -35,8 +35,16 @@ public class InsertarProductoServlet extends HttpServlet {
         } catch (Exception e) {
             mensaje = "Error: " + e.getMessage();
         }
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = null;
+        try {
+            out = response.getWriter();
             out.print("{\"exito\":" + exito + ",\"mensaje\":\"" + mensaje + "\"}");
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } finally {
+            if (out != null) {
+                out.close();
+            }
         }
     }
 }
