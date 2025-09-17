@@ -1,0 +1,78 @@
+/* estilos.css */
+body {
+    background: #f8fafc;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 32px;
+}
+form {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    align-items: center;
+    justify-content: center;
+}
+form label {
+    min-width: 80px;
+    font-weight: 500;
+}
+form input {
+    padding: 6px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+button {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    margin: 0 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+button:hover {
+    background: #1d4ed8;
+}
+#resultados {
+    margin: 16px 0;
+    min-height: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: #f1f5f9;
+}
+thead {
+    background: #2563eb;
+    color: #fff;
+}
+th, td {
+    padding: 10px 8px;
+    border: 1px solid #cbd5e1;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background: #e0e7ef;
+}
+tr:hover {
+    background: #dbeafe;
+}

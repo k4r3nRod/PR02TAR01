@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Gestión de Productos</h1>
+    <form id="formProducto" class="row g-3 mb-3">
+        <input type="hidden" id="id" name="id">
+        <div class="col-md-4">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+            <label for="descripcion" class="form-label">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label for="precio" class="form-label">Precio:</label>
+            <input type="number" id="precio" name="precio" step="0.01" class="form-control" required>
+        </div>
+    </form>
+    <div class="mb-3">
+        <button id="btnMostrar" class="btn btn-primary">MOSTRAR</button>
+        <button id="btnIngresar" class="btn btn-success">INGRESAR</button>
+        <button id="btnEditar" class="btn btn-warning">EDITAR</button>
+        <button id="btnEliminar" class="btn btn-danger">ELIMINAR</button>
+    </div>
+    <div id="resultados"></div>
+    <div class="table-responsive">
+        <table id="tablaProductos" class="table table-striped table-hover align-middle">
+            <thead class="table-primary">
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Productos aquí -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
 </html>
